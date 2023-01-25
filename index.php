@@ -39,6 +39,16 @@
     class Toy extends Products
     {
 
+        public function __construct($name, $description, $price, $category, )
+        {
+            parent::__construct($name, $description, $price, $category);
+        }
+
+        public function getHtml()
+        {
+            return parent::getHtml();
+        }
+
     }
 
     class Food extends Products
@@ -66,13 +76,26 @@
 
     class Bed extends Products
     {
+        public function __construct($name, $description, $price, $category)
+        {
+            parent::__construct($name, $description, $price, $category);
+
+        }
+
+        public function getHtml()
+        {
+            return parent::getHtml();
+        }
 
     }
 
     $toy1 = new Toy("Palla", "Palla in gomma ad alta resistenza", "21.50", "cane");
     $food1 = new Food("Monge", "Mangime secco", "45.00", "cane", "30-10-2025");
+    $bed1 = new Bed("Cuscino morbido", "Cuscino con ovatta", "30.00", "gatto");
 
     echo $food1->getHtml();
+    echo $toy1->getHtml();
+    echo $bed1->getHtml();
 
     ?>
 </body>

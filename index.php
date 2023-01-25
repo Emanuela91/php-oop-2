@@ -16,7 +16,6 @@
         public $name;
         public $description;
         public $price;
-
         public $category;
 
         public function __construct($name, $description, $price, $category)
@@ -36,7 +35,12 @@
 
     class Food extends Products
     {
+        public $expirationDate;
 
+        public function __construct($expirationDate)
+        {
+            $this->expirationDate = $expirationDate;
+        }
     }
 
     class Bed extends Products
@@ -44,11 +48,12 @@
 
     }
 
-    $toy1 = new Toy("")
+    $toy1 = new Toy("Palla", "Palla in gomma ad alta resistenza", "21.50", "cane");
+    $food1 = new Food("Monge", "Mangime secco", "45.00", "cane");
 
 
 
-        ?>
+    ?>
 </body>
 
 </html>

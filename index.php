@@ -29,9 +29,26 @@
         }
     }
 
+    class Toy extends Products
+    {
+
+    }
+
+    class Food extends Products
+    {
+
+    }
+
+    class Bed extends Products
+    {
+
+    }
+
+    $toy1 = new Toy("")
 
 
-    ?>
+
+        ?>
 </body>
 
 </html>

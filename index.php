@@ -26,6 +26,14 @@
             $this->category = $category;
 
         }
+
+        public function getHtml()
+        {
+            return "<h1>" . "Nome:" . $this->name . "<br>" .
+                "Descrizione:" . $this->description . "<br>" .
+                "Prezzo:" . $this->price . "<br>" .
+                "Categoria:" . $this->category . "</h1>";
+        }
     }
 
     class Toy extends Products
@@ -37,9 +45,22 @@
     {
         public $expirationDate;
 
-        public function __construct($expirationDate)
+        public function __construct($name, $description, $price, $category, $expirationDate)
         {
             $this->expirationDate = $expirationDate;
+            parent::__construct($name, $description, $price, $category);
+
+        }
+
+        public function getHtml()
+        {
+            return parent::getHtml() .
+                $this->getVarFoodHtml();
+        }
+
+        public function getVarFoodHtml()
+        {
+            return "<h1>" . "Data di scadenza:" . $this->expirationDate . "</h1>";
         }
     }
 
@@ -49,9 +70,9 @@
     }
 
     $toy1 = new Toy("Palla", "Palla in gomma ad alta resistenza", "21.50", "cane");
-    $food1 = new Food("Monge", "Mangime secco", "45.00", "cane");
+    $food1 = new Food("Monge", "Mangime secco", "45.00", "cane", "30-10-2025");
 
-
+    echo $food1->getHtml();
 
     ?>
 </body>
